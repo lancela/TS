@@ -1,0 +1,85 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "target": "esnext",
+    "types": [],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Other Outputs
+    "sourceMap": false, // 生成Source Map 文件。记录了编译后代码与原始 TS 代码的映射关系，主要用于浏览器或调试工具中调试原始的 TS 代码
+    "declaration": false,
+    // "declaration": true,  // 生成类型声明文件 包含 TypeScript 的类型信息，主要供其他 TS 项目使用，以实现代码智能提示和类型检查。
+    // "declarationMap": true,
+    "declarationMap": false,
+    "noEmitOnError": true, // 如果报告了任何错误，则不要触发编译器输出文件，如 JavaScript 源代码、源映射或声明。
+    // Stricter Typechecking Options
+    /* 超严格补充（strict 不包含，但精通必加） */
+    "noUncheckedIndexedAccess": true, // 访问数组/对象索引时，自动加上 undefined
+    /* 额外严苛检查 */
+    "exactOptionalPropertyTypes": true, // 严格区分 { age?: number } 和 { age?: number | undefined }
+
+    /* 额外辅助（可选但强烈建议） */
+    "noUnusedLocals": true, // 未使用的局部变量报错
+    "noUnusedParameters": true, // 未使用的函数参数报错
+    "noImplicitReturns": true, // 函数所有分支必须显式返回
+    "noFallthroughCasesInSwitch": true, // switch 禁止穿透
+
+    // Style Options
+    // "noImplicitOverride": true,
+    // "noPropertyAccessFromIndexSignature": true, // 禁止用 . 访问索引签名，必须用 []
+
+    // Recommended Options
+    // 注意：strict: true 开启后，如果单独设置某个子选项为 false，会覆盖掉 strict 中的对应项。
+    "strict": true, // noImplicitAny、noImplicitThis、strictNullChecks、strictFunctionTypes、strictBindCallApply、strictPropertyInitialization 都会被启用。
+    // 禁止隐式的 any 类型。值为true 时，如果 TypeScript 无法推断出一个变量或参数的类型，它会报错，而不是默认将其当作 any。
+    // 消除类型系统中的“黑洞” any。它强制你明确所有数据的类型，避免因类型不明而导致的运行时错误。
+    "noImplicitAny": false,
+    "noImplicitThis": true, // 确保 this 有明确类型
+    // 严格的 null 和 undefined 检查。开启后，null 和 undefined 不再能赋值给其他类型（如 string），
+    // 除非你显式地声明该类型为 string | null 或 string | undefined。
+    // JavaScript 中最常见的运行时错误之一就是“无法读取未定义的属性”。这个选项强制你在使用前处理可能为 null 或 undefined 的值。
+    "strictNullChecks": true,
+    /***
+     * 更严格的函数类型检查。它更精确地检查函数参数的类型是否兼容，尤其是在涉及回调函数时。
+     更准确地捕获函数参数类型不匹配的错误，避免因类型兼容性判断过于宽松而导致的隐患。
+     */
+
+    "strictFunctionTypes": true,
+    /***
+     *对 bind、call 和 apply 方法进行更严格的类型检查。
+     确保你在使用这些方法改变函数 this 指向或传递参数时，参数的类型和数量是正确的。
+     */
+    "strictBindCallApply": true,
+    /**
+    强制类属性初始化。它要求类中的所有非可选属性必须在构造函数中被初始化，或者有默认值。
+    避免类实例在创建后，因某个属性未定义而导致的“属性未定义”错误
+    */
+    "strictPropertyInitialization": true,
+    /* 唯一可能被关闭的项（例如配合依赖注入框架时） */
+    // "strictPropertyInitialization": false,
+
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    /* 类型一致性 */
+    "forceConsistentCasingInFileNames": true // 文件名大小写敏感
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
