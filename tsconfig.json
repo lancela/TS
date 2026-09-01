@@ -66,9 +66,9 @@
     强制类属性初始化。它要求类中的所有非可选属性必须在构造函数中被初始化，或者有默认值。
     避免类实例在创建后，因某个属性未定义而导致的“属性未定义”错误
     */
-    "strictPropertyInitialization": true,
+    // "strictPropertyInitialization": true,
     /* 唯一可能被关闭的项（例如配合依赖注入框架时） */
-    // "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false,
 
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
