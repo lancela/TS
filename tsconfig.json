@@ -45,7 +45,7 @@
     "strict": true, // noImplicitAny、noImplicitThis、strictNullChecks、strictFunctionTypes、strictBindCallApply、strictPropertyInitialization 都会被启用。
     // 禁止隐式的 any 类型。值为true 时，如果 TypeScript 无法推断出一个变量或参数的类型，它会报错，而不是默认将其当作 any。
     // 消除类型系统中的“黑洞” any。它强制你明确所有数据的类型，避免因类型不明而导致的运行时错误。
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noImplicitThis": true, // 确保 this 有明确类型
     // 严格的 null 和 undefined 检查。开启后，null 和 undefined 不再能赋值给其他类型（如 string），
     // 除非你显式地声明该类型为 string | null 或 string | undefined。
