@@ -8,6 +8,6 @@ var Response;
 function respond(recipient, message) {
     console.log(recipient + ' responded with ' + message);
 }
+respond('Princess Caroline', Response.Yes);
 let dir = 1;
 console.log(dir);
-respond('Princess Caroline', Response.Yes);

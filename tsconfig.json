@@ -31,7 +31,7 @@
     "exactOptionalPropertyTypes": true, // 严格区分 { age?: number } 和 { age?: number | undefined }
 
     /* 额外辅助（可选但强烈建议） */
-    "noUnusedLocals": true, // 未使用的局部变量报错
+    "noUnusedLocals": false, // 未使用的局部变量报错
     "noUnusedParameters": true, // 未使用的函数参数报错
     "noImplicitReturns": true, // 函数所有分支必须显式返回
     "noFallthroughCasesInSwitch": true, // switch 禁止穿透
@@ -57,6 +57,8 @@
      */
 
     "strictFunctionTypes": true,
+    // "strictFunctionTypes": false,
+
     /***
      *对 bind、call 和 apply 方法进行更严格的类型检查。
      确保你在使用这些方法改变函数 this 指向或传递参数时，参数的类型和数量是正确的。
